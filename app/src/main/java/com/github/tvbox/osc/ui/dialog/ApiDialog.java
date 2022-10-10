@@ -56,7 +56,7 @@ public class ApiDialog extends BaseDialog {
         tvAddress = findViewById(R.id.tvAddress);
         inputApi = findViewById(R.id.input);
         //内置网络接口在此处添加
-        inputApi.setText(Hawk.get(HawkConfig.API_URL, "https://raw.iqiq.io/vpei/Free-TVUrl-Merge/main/out/tvbox.txt"));
+        inputApi.setText(Hawk.get(HawkConfig.API_URL, ""));
         findViewById(R.id.inputSubmit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,7 +79,7 @@ public class ApiDialog extends BaseDialog {
                 ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
                 if (history.isEmpty())
                     return;
-                String current = Hawk.get(HawkConfig.API_URL, "");
+                String current = Hawk.get(HawkConfig.API_URL, "https://raw.iqiq.io/vpei/Free-TVUrl-Merge/main/out/tvbox.txt");
                 int idx = 0;
                 if (history.contains(current))
                     idx = history.indexOf(current);
